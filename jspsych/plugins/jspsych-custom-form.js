@@ -331,13 +331,33 @@ jsPsych.plugins["custom-form"] = (function() {
       var class_strings = embellishClassString(question_data, q_index);
       var container_class_string = 'slider-container ' + class_strings.container;
 
-      var width = Math.floor(100/(labels.length+1));
+      var width = Math.floor(50/(labels.length+1));
       var html_string = '<div id="question-container-'+question_id+'" class="'+container_class_string+'" style="margin: auto;">';
       html_string += '<div class="prompt">'+prompt+'</div>';
       var input_class_string = 'slider answer ' + class_strings.input;
-      html_string += '<input type="range" min="1" max="100" value="50" class="'+input_class_string+'" id="'+question_id+'" style="width: 100%">';
 
-      var label_string = '<div class="label-container" style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start">';
+      switch (question_data.id) {
+        case 'weight':
+          html_string += '<div style = "text-align:center">' + '<input  type="range" min="20" max="500" value="200" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
+          '<br> <b><output id=out'+ question_id +'>200</output> lbs</b>'+'</div>';
+          break;
+        case 'heightfeet':
+          html_string += '<div style = "text-align:center">' + '<input  type="range" min="1" max="10" value="5" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
+          '<br> <b><output id=out'+ question_id +'>5</output> feet</b>'+'</div>';
+          break;
+        case 'heightinch':
+          html_string += '<div style = "text-align:center">' + '<input  type="range" min="0" max="11" value="0" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
+          '<br> <b><output id=out'+ question_id +'>0</output> inches</b>'+'</div>';
+          break;
+
+        default:
+          html_string += '<div style = "text-align:center">' + '<input  type="range" min="0" max="28" value="14" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
+          '<br> <b><output id=out'+ question_id +'>14</output> Days</b>'+'</div>';
+          break;
+      }
+
+
+      var label_string = '<div class="label-container" style="display: flex; width: 50%; justify-content: space-between; align-items: flex-start text-align:center">';
       labels.forEach(function(label, i){
         var style_string = 'width: '+width+'%;';
         var label_class_string = 'slider label ';

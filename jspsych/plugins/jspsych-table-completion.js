@@ -200,8 +200,25 @@ Table
       }
 
       header_string = '<div>'+header+'</div>';
-      acc += '<th valign="'+valign+'" class="'+class_string+'" style=" width:'+column_width+'%">'+header_string+icon_string+'</th>';
-      return acc;
+
+      if (header == 'slightly' || header == 'moderately' || header == 'markedly') 
+      {
+        acc += '<th colspan = "2" valign="'+valign+'" class="'+class_string+'" style=" width:'+ 2*column_width+'%">'+header_string+icon_string+'</th>';
+        return acc;
+
+      }
+      else if (header != '')
+      {
+        acc += '<th valign="'+valign+'" class="'+class_string+'" style=" width:'+column_width+'%">'+header_string+icon_string+'</th>';
+        return acc;
+          
+      }
+      else
+      {
+        acc += '<th valign="'+valign+'" class="'+class_string+'" style=" width:'+0+'%">'+header_string+icon_string+'</th>';
+        return acc;
+      }
+
     }, '');
     var header_row = '<thead style="width:100%"><tr style="width:100%">'+header_cells+'</tr></thead>';
 
