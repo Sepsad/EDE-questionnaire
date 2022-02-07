@@ -140,7 +140,7 @@ var second_part = {
 
 }
 
-timeline.push(second_part);
+// timeline.push(second_part);
 
 
 
@@ -159,7 +159,7 @@ var third_1_part = {
 
 }
 
-timeline.push(third_1_part);
+// timeline.push(third_1_part);
 
 var third_2_part = {
 
@@ -176,7 +176,7 @@ var third_2_part = {
 
 }
 
-timeline.push(third_2_part);
+// timeline.push(third_2_part);
 
 var third_3_part = {
 
@@ -185,7 +185,7 @@ var third_3_part = {
     select_one: true,
     submit: 'Continue',
     highlighting: 'row',
-    row_values: [{id: '20', row_name: "21. Over the past 28 days, how concerned have you been about other people seeing you eat? … Do not count episodes of binge eating."}],
+    row_values: [{id: '21', row_name: "21. Over the past 28 days, how concerned have you been about other people seeing you eat? … Do not count episodes of binge eating."}],
     column_headers: [' ','Not at all', 'slightly','', 'moderately','',  'markedly',''],
     response_validation: 'force_column',
     column_vals: [ -1,0, 1, 2, 3, 4, 5, 6],
@@ -193,17 +193,17 @@ var third_3_part = {
 
 }
 
-timeline.push(third_3_part);
+// timeline.push(third_3_part);
 
 
 forth_part_questions  = [
-    {id: '1', row_name: "22. Has your weight influenced how you think about (judge) yourself as a person?"},
-    {id: '2', row_name: "23. Has your shape influenced how you think about (judge) yourself as a person?"},
-    {id: '3', row_name: "24. How much would it have upset you if you had been asked to weigh yourself once a week (no more, or less, often) for the next four weeks?"},
-    {id: '4', row_name: "25. How dissatisfied have you been with your weight?"},
-    {id: '5', row_name: "26. How dissatisfied have you been with your shape? "},
-    {id: '6', row_name: "27. How uncomfortable have you felt seeing your body (for example, seeing your shape in the mirror, in a shop window reflection, while undressing or taking a bath or shower)?"},
-    {id: '7', row_name: "28. How uncomfortable have you felt about others seeing your shape or figure (for example, in communal changing rooms, when swimming, or wearing tight clothes)?"},
+    {id: '22', row_name: "22. Has your weight influenced how you think about (judge) yourself as a person?"},
+    {id: '23', row_name: "23. Has your shape influenced how you think about (judge) yourself as a person?"},
+    {id: '24', row_name: "24. How much would it have upset you if you had been asked to weigh yourself once a week (no more, or less, often) for the next four weeks?"},
+    {id: '25', row_name: "25. How dissatisfied have you been with your weight?"},
+    {id: '26', row_name: "26. How dissatisfied have you been with your shape? "},
+    {id: '27', row_name: "27. How uncomfortable have you felt seeing your body (for example, seeing your shape in the mirror, in a shop window reflection, while undressing or taking a bath or shower)?"},
+    {id: '28', row_name: "28. How uncomfortable have you felt about others seeing your shape or figure (for example, in communal changing rooms, when swimming, or wearing tight clothes)?"},
 
 ]
 
@@ -221,7 +221,69 @@ var forth_part = {
 
 }
 
-timeline.push(forth_part);
+// timeline.push(forth_part);
+
+desirability_to_control_questions_1 = [
+    {id: '29', row_name: "29. I prefer a job where I have alot of control over what I do and when I do it."},
+    {id: '30', row_name: "30. I enjoy political participation because I want to have as much of a say in running government as possible."},
+    {id: '31', row_name: "31. I try to avoid situations where someone else tells me what to do."},
+    {id: '32', row_name: "32. I would prefer to be a leader rather than a follower."},
+    {id: '33', row_name: "33. I enjoy being able to influence the actions of others."},
+    {id: '34', row_name: "34. I am careful to check everything on an automobile before I leave for a long trip."},
+    {id: '35', row_name: "35. Others usually know what is best for me."},
+    {id: '36', row_name: "36. I enjoy making my own decisions."},
+    {id: '37', row_name: "37. I enjoy having control over my own destiny."},
+    {id: '38', row_name: "38. I would rather someone else took over the leadership role when I'm involved in a group project."},
+]
+
+
+var desirability_to_control_part_1 = {
+    type: 'table-completion',
+    id: 'desirability_to_control_1',
+    select_one: true,
+    submit: 'Continue',
+    highlighting: 'row',
+    row_values: desirability_to_control_questions_1,
+    column_headers: ['Check the box that best reflects your belief','Never true', 'Rarely true','Sometimes but infrequently true', 'Neutral','Sometimes true',  'Usually true','Always true'],
+    response_validation: 'force_column',
+    column_vals: [ -1,1, 2, 3, 4, 5, 6, 7],
+    preamble: "Questions 29 to 38: Below you will find a series of statements. Please read each statement carefully and respond to it by expressing the extent to which you believe the statement applies to you.",
+
+}
+
+timeline.push(desirability_to_control_part_1)
+
+desirability_to_control_questions_2 = [
+    {id: '39', row_name: "39. I consider myself to be generally more capable of handling situations than others are."},
+    {id: '40', row_name: "40. I'd rather run my own business and make my own mistakes than listen to someone else's orders."},
+    {id: '41', row_name: "41. I like to get a good idea of What a job is all about before I begin."},
+    {id: '42', row_name: "42. When I see a problem I prefer to do something about it rather than sit by and let it continue."},
+    {id: '43', row_name: "43. When it comes to orders, I would rather give them than receive them."},
+    {id: '44', row_name: "44. I wish I could push many of life's daily decisions off on someone else."},
+    {id: '45', row_name: "45. When driving, I try to avoid putting myself in a situation where I could be hurt by someone else's mistake."},
+    {id: '46', row_name: "46. I prefer to avoid situations where someone else has to telt me what it is I should be doing."},
+    {id: '47', row_name: "47. There are many situations in which I would prefer only one choice rather than having to make a decision."},
+    {id: '48', row_name: "48. I like to wait and see if someone else is going to solve a problem so that I don't have to be bothered by it."}
+] 
+
+var desirability_to_control_part_2 = {
+    type: 'table-completion',
+    id: 'desirability_to_control_2',
+    select_one: true,
+    submit: 'Continue',
+    highlighting: 'row',
+    row_values: desirability_to_control_questions_2,
+    column_headers: ['Check the box that best reflects your belief','Never true', 'Rarely true','Sometimes but infrequently true', 'Neutral','Sometimes true',  'Usually true','Always true'],
+    response_validation: 'force_column',
+    column_vals: [ -1, 1, 2, 3, 4, 5, 6, 7],
+    preamble: "Questions 39 to 48: Below you will find a series of statements. Please read each statement carefully and respond to it by expressing the extent to which you believe the statement applies to you.",
+
+}
+
+timeline.push(desirability_to_control_part_2)
+
+
+
 
 
 var fifth_part_questions = [ 
@@ -244,10 +306,54 @@ var fifth_part_questions = [
 
 var fifth_part = {
     type: 'custom-form',
-    id: 'second',
+    id: 'fifth',
+    highlight: 'group',
+    submit: 'Continue',
+    questions: fifth_part_questions,
+    on_finish: function(data){
+    }
+}
+
+timeline.push(fifth_part);
+
+
+
+
+
+
+var sixth_part= {
+    type: 'custom-form',
+    id: 'sixth',
     highlight: 'group',
     submit: 'Finish',
-    questions: fifth_part_questions,
+    questions: [
+        {type: 'multiple',
+        prompt: "Have you ever had a pet?",
+        id: 'pet',
+        options: ['no', 'yes'],
+        values: ['no', 'yes'],
+        has_followup: [{id: 'pet-type', criterion: 'yes'}, {id: 'pet-timeperiod', criterion: 'yes'}, {id: 'pet-number', criterion: 'yes'}],
+        group: 0},
+        {type: 'text',
+        placeholder: 'Cat, Dog, ...',
+        prompt: "What pet have you had?",
+        id: 'pet-type',
+        is_followup: true,
+        group: 1},
+        {type: 'text',
+        prompt: "How many have you had?",
+        placeholder: '1',
+        id: 'pet-number',
+        is_followup: true,
+        group: 2},
+        {type: 'text',
+        placeholder: 'years',
+        prompt: "How long (years) have you had it/they?",
+        id: 'pet-timeperiod',
+        is_followup: true,
+        group: 3}
+  
+    ],
     on_finish: function(data){
         completion_code = jsPsych.data.get().last(1).values()[0].experiment_id;
 
@@ -259,9 +365,11 @@ var fifth_part = {
         "<p>If you have any questions about this study, please mail Sepehr at <a href='Sepehrsdp@gmail.com' target = '_top'>sepehrsdp@gmail.com</a></p>"
         jsPsych.endExperiment(goodbye_message);
     }
+
 }
 
-timeline.push(fifth_part);
+timeline.push(sixth_part);
+
 
 jsPsych.data.addProperties({
     experiment_id: "GNG_" + experiment_id,
@@ -279,6 +387,9 @@ jsPsych.data.addProperties({
 });
 
 
+
+
+
 jsPsych.init({
     // uncomment if you need to preload anything that isn't a stim in an existing jspsych plugin
     preload_images: [],
@@ -287,8 +398,8 @@ jsPsych.init({
     experiment_width: 1000,
     timeline: timeline,
     on_finish: function(){
-        // jsPsych.data.displayData();
-        // jsPsych.data.get().localSave('csv', 'data.csv');
+        jsPsych.data.displayData();
+        jsPsych.data.get().localSave('csv', 'data.csv');
 
     }
 });

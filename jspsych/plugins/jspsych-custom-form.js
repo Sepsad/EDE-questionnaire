@@ -339,20 +339,20 @@ jsPsych.plugins["custom-form"] = (function() {
       switch (question_data.id) {
         case 'weight':
           html_string += '<div style = "text-align:center">' + '<input  type="range" min="20" max="500" value="200" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
-          '<br> <b><output id=out'+ question_id +'>200</output> lbs</b>'+'</div>';
+          '<br> <b><output id=out'+ question_id +'>[Please slide the button]</output> lbs</b>'+'</div>';
           break;
         case 'heightfeet':
           html_string += '<div style = "text-align:center">' + '<input  type="range" min="1" max="10" value="5" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
-          '<br> <b><output id=out'+ question_id +'>5</output> feet</b>'+'</div>';
+          '<br> <b><output id=out'+ question_id +'>[Please slide the button]</output> feet</b>'+'</div>';
           break;
         case 'heightinch':
           html_string += '<div style = "text-align:center">' + '<input  type="range" min="0" max="11" value="0" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
-          '<br> <b><output id=out'+ question_id +'>0</output> inches</b>'+'</div>';
+          '<br> <b><output id=out'+ question_id +'>[Please slide the button]</output> inches</b>'+'</div>';
           break;
 
         default:
           html_string += '<div style = "text-align:center">' + '<input  type="range" min="0" max="28" value="14" class="'+input_class_string+'" id="'+question_id+'" style= "width: 50%" oninput="out'+question_id+'.value = this.value" >' + 
-          '<br> <b><output id=out'+ question_id +'>14</output> Days</b>'+'</div>';
+          '<br> <b><output id=out'+ question_id +'>[Please slide the button]</output> </b>'+'</div>';
           break;
       }
 
@@ -573,7 +573,9 @@ Inputs/interactions
           var email = answer_obj.hasClass('email');
 
           if(value){
-            value = JSON.stringify(value.trim());
+            // value = JSON.stringify(value.trim());
+            value = (value.trim());
+
             requirement_tracker[parent] = true;
             responses.push({id: id, name: name, value: value, optional: optional, numeric: numeric, email: email});
           }
